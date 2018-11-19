@@ -29,19 +29,22 @@
                 <h5 class="text-center text-white pt-4 mr-3">Jusu Spejimas</h5><p class="text-center" id="alert"></p>
                 </div>
                 <form>
-                <input  id="gues"  class="form-control" type="text" maxlength="1" onkeypress="this.value=''">
+                <input  id="gues"  class="form-control" type="text" maxlength="1" onkeyup='this.value=" "'>
             </form>
-              <!--   <button type="button" class="btn btn-primary" onclick="newFunction()" >Tikrinti</button> -->
+               <!--  <button type="button" id="bt"  class="btn btn-primary" onclick="newFunction()">Tikrinti</button> -->
             </div>
         </div>
         <div class="container">
-        <div class="row view">
+        <div class="row">
                 <div class="col-md-6">
             <h3 class="text-white text-center">Jusu buve spejimai: </h3><h3 class="text-white" id="guesses"></h3>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <h3 class="text-white">Jums liko gyventi: </h3>
-                    <h3 id="lifes"></h3>
+                </div>
+                <div class="col-md-3">
+                    <h3  id="lifes"></h3>
+                </div>
                 </div>
             </div>
         </div>
