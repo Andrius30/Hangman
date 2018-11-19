@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kartuves</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="myDiv">
+       <h1 class="text-center welcome py-5">KARTUVES</h1>
+        <div class="container">
+
+            <h3 class="text-white">Badykite atspeti zodi..</h3>
+            <div class="row mt-5 d-flex justify-content-center">
+                <h5 class="pr-3 pl-3">
+                Zodis: 
+                </h5>
+                <p class="text-center" id="randWord">
+                </p>
+            </div>
+            <div>
+                <div class="row">
+                <h5 class="text-center text-white pt-4 mr-3">Jusu Spejimas</h5><p class="text-center" id="alert"></p>
+                </div>
+                <form>
+                <input  id="gues"  class="form-control" type="text" maxlength="1" onkeypress="this.value=''">
+            </form>
+              <!--   <button type="button" class="btn btn-primary" onclick="newFunction()" >Tikrinti</button> -->
+            </div>
+        </div>
+        <div class="container">
+        <div class="row view">
+                <div class="col-md-6">
+            <h3 class="text-white text-center">Jusu buve spejimai: </h3><h3 class="text-white" id="guesses"></h3>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-white">Jums liko gyventi: </h3>
+                    <h3 id="lifes"></h3>
+                </div>
+            </div>
+        </div>
+      
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js"></script>
+    <script src="functions.js"></script>
+</body>
+
+</html>
