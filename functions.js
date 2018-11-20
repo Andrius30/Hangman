@@ -24,7 +24,7 @@ var lifes = 8;
 var gussedLetter = 0;
 var points = 0;
 const input = document.querySelector('#gues');
-const regex = /^[a-zA-Z\s]*$/;
+const regex = /^[a-z\s]*$/;
 const btn = document.getElementById('btn');
 const btnWin = document.getElementById('btnwin');
 console.log(btn);
@@ -48,9 +48,6 @@ var hideWord = function() {
     $("#randWord").text(s);
 }
 
-var variable = $('#gues').val();
-var letter = $('#alert').text(variable);
-
 input.addEventListener('keyup', function() {
     var isItAGoodGuess = false;
     let char = input.value;
@@ -67,6 +64,7 @@ input.addEventListener('keyup', function() {
             }
         }
     } else {
+    	isItAGoodGuess = true;
         alert('bad input');
     }
     input.value = '';

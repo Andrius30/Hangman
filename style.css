@@ -1,7 +1,7 @@
 body{
     width: 100%;
     height: 100vh;
-    background: url(https://andrius30.github.io/Hangman/img/bg2.jpg) no-repeat center;
+    background: url(../kartuves_JS/img/bg2.jpg) no-repeat center;
     background: cover;
 }
 
