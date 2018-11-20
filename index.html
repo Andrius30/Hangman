@@ -3,41 +3,42 @@
 
 <head>
     <title>Kartuves</title>
-    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="themes/simple.css">
+    <link rel="stylesheet" href="css/jquery.arcticmodal-0.3.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="container-fluid">
-        <h1 class="text-center welcome py-5">KARTUVES</h1>
+        <h1 class="text-center welcome py-5"><strong><em>HANGMAN</em></strong></h1>
         <div class="container">
-        <div class="row">
-                    <em class="text-white text-center">Taskai: </em><em class="mano text-white text-center" id="points"></em>
+            <div class="row">
+                <em class="text-white text-center">Points: </em><em class="mano text-white text-center" id="points"></em>
             </div>
         </div>
         <div class="container">
-            
-            <h3 class="text-white">Badykite atspeti zodi..</h3>
+
+            <h3 class="text-white text-center">Meet Your Destiny!</h3>
             <div class="row mt-5 d-flex justify-content-center">
-                <h5 class="pr-3 pl-3">
-                Zodis: 
+                <h5 class="pr-3 pl-3 text-white">
+                Secret Word: 
                 </h5>
                 <p class="text-center" id="randWord">
                 </p>
             </div>
             <div>
                 <div class="row">
-                    <h5 class="text-center text-white pt-4 mr-3">Jusu Spejimas</h5>
+                    <h5 class="text-center text-white pt-4 mr-3">Curren Guess</h5>
                     <p class="text-center" id="alert"></p>
                 </div>
                 <form>
-                    <input id="gues" class="form-control" type="text" maxlength="1" onkeypress="this.value=''">
+                    <input id="gues" class="form-control" type="text" maxlength="1">
                 </form>
                 <!--                 <button type="button" class="btn btn-primary" onclick="newFunction()" >Tikrinti</button> -->
             </div>
@@ -45,30 +46,43 @@
         <div class="container">
             <div class="row view">
                 <div class="col-md-6">
-                    <h3 class="text-white text-center">Jusu buve spejimai: <h3 class="text-white" id="guesses"></h3></h3>
+                    <h3 class="text-white text-center">Guesses: <strong class="text-white" id="guesses"></strong></h3>
                 </div>
                 <div class="col-md-6">
-                    <h3 class="text-white">Lifes: </h3>
-                    <h3 class="text-white" id="lifes"></h3>
+                    <h3 class="text-white">Lifes: <strong  class="text-white" id="lifes"></strong></h3>
+                    <h3></h3>
                 </div>
             </div>
-            <div class="row">
-                <h1 class="text-white" id="win"></h1>
+        </div>
+        <!-- You Won Screen ---->
+        <div style="display: none;">
+            <div class="box-modal" id="win">
+                <h1 style="color: dimgrey"><strong>Congratzzz!</strong><span style="color: chartreuse"><em><br/>You Safe Now</em></span></h1>
+                <h3 style="color: darkblue" id="secretWord"></h3>
+                <div class="box-modal_close arcticmodal-close">
+                    <div class="box">
+                        <button id="btnwin" type="button" class="btn aqua-gradient">New Game</button>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
+        <!--  You Won screen ends  -->
+        <!-- Game Over Screen ---->
+        <div style="display: none;">
+            <div class="box-modal" id="exampleModal">
+                <h1>Game Over</h1>
+                <div class="box-modal_close arcticmodal-close">
+                    <div class="box">
+                        <button id="btn" type="button" class="btn aqua-gradient">New Game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  Game Over screen ends  -->
     </div>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery.arcticmodal-0.3.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->

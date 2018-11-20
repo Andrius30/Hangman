@@ -1,7 +1,7 @@
 body{
     width: 100%;
     height: 100vh;
-    background: url(https://andrius30.github.io/Hangman/img/bg2.jpg) no-repeat center;
+    background: url(../kartuves_JS/img/bg2.jpg) no-repeat center;
     background: cover;
 }
 
@@ -12,13 +12,13 @@ body{
 .row p{
     color: red;
     font-size: 3rem;
-    border: 5px dashed rgba(0,0,0,0.6);
+    border: 5px dashed rgba(255,255,255,0.3);
 }
 
 #alert{
     color: #fff;
     font-size: 3rem;
-    border: 5px dotted rgba(0,0,0,0.6);
+    border: 5px dotted rgba(255,255,255,0.3);
     width: 50px;
     height: 80px;
     text-align: center;
@@ -52,4 +52,13 @@ body{
 
 .mano p{
   color: green;  
+}
+
+.btn{
+	color: rgba(0,0,0,1) !important;
+}
+
+.box-modal h1{
+	display: flex !important;
+	justify-content: center !important;
 }
