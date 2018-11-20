@@ -27,7 +27,7 @@ const input = document.querySelector('#gues');
 const regex = /^[a-z\s]*$/;
 const btn = document.getElementById('btn');
 const btnWin = document.getElementById('btnwin');
-console.log(btn);
+const gameOverSound = new sound('C:/Users/Andrius/Desktop/kartuves_JS/sounds/gameOver.mp3');
 
 // You Lost Game Over
 console.log(randomWord);
@@ -64,7 +64,7 @@ input.addEventListener('keyup', function() {
             }
         }
     } else {
-    	isItAGoodGuess = true;
+        isItAGoodGuess = true;
         alert('bad input');
     }
     input.value = '';
@@ -95,7 +95,7 @@ input.addEventListener('keyup', function() {
         guessedLetters.push(char);
     } else {
         isItAGoodGuess = true;
-        alert("Tokia raide jau buvo!" + char);
+        alert("Tokia raide jau buvo! " + char.toUpperCase());
         points = (points - 10);
     }
 
@@ -118,8 +118,9 @@ input.addEventListener('keyup', function() {
             $(function() {
                 $('#exampleModal').arcticmodal();
             });
-            // new GameOver reset
-
+            // game over sound effects
+            
+            gameOverSound.play();
             points = points / 2;
         }
         document.getElementById('points').innerHTML = points;
@@ -128,5 +129,19 @@ input.addEventListener('keyup', function() {
     s = hidenArray.join(" ");
     $("#randWord").text(s);
 });
-// padaryti kad galima butu kartoti zaidima
 $('#randWord').text(hideWord());
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}
