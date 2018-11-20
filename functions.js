@@ -27,15 +27,16 @@ const input = document.querySelector('#gues');
 const regex = /^[a-z\s]*$/;
 const btn = document.getElementById('btn');
 const btnWin = document.getElementById('btnwin');
-const gameOverSound = new sound('https://andrius30.github.io/Hangman/sounds/gameOver.mp3');
+const gameOverSound = new sound('https://andrius30.github.io/Hangman//sounds/gameOver.mp3');
+const bgSound = new sound('https://andrius30.github.io/Hangman//sounds/backgroundS.mp3');
 
 // You Lost Game Over
 console.log(randomWord);
 
 
-
 // hide Word
 var hideWord = function() {
+
     for (var i = 0; i < randomWord.length; i++) {
         if (randomWord[i] === ' ') {
             hidenArray.push(' ');
@@ -130,12 +131,24 @@ input.addEventListener('keyup', function() {
     $("#randWord").text(s);
 });
 $('#randWord').text(hideWord());
+var bg = function() {
+	bgSound.play();
+}
+
+var stp = function(){
+	bgSound.stop();
+}
+var ply = function(){
+	bgSound.play();
+}
 
 function sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "none");
+    this.sound.setAttribute("loop", "true");
+    this.sound.setAttribute("mute","false");
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
     this.play = function(){
