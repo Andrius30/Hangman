@@ -89,7 +89,6 @@ input.addEventListener('keyup', function() {
         });
         $(function() {
             $('#win').arcticmodal();
-            $('secretWord').text(randomWord);
         });
         points = (points * 2);
     }
