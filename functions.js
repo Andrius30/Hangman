@@ -27,7 +27,7 @@ const input = document.querySelector('#gues');
 const regex = /^[a-z\s]*$/;
 const btn = document.getElementById('btn');
 const btnWin = document.getElementById('btnwin');
-const gameOverSound = new sound('C:/Users/Andrius/Desktop/kartuves_JS/sounds/gameOver.mp3');
+const gameOverSound = new sound('https://andrius30.github.io/Hangman/sounds/gameOver.mp3');
 
 // You Lost Game Over
 console.log(randomWord);
