@@ -73,6 +73,7 @@ input.addEventListener('keyup', function() {
     if (gussedLetter >= randomWord.length) {
         // You WON reset
         btnWin.addEventListener('click', function() {
+            gameOverSound.stop(); //  sitas siaip testinimo sumetimais
             lifes = 8;
             gussedLetter = 0;
             guessedLetters = [];
@@ -108,6 +109,7 @@ input.addEventListener('keyup', function() {
             $('#lifes').text(lifes);
         } else {
             btn.addEventListener('click', function() {
+                gameOverSound.stop();
                 lifes = 8;
                 gussedLetter = 0;
                 guessedLetters = [];
