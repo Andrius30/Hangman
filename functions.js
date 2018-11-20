@@ -11,7 +11,11 @@ var words = [
     'roof',
     'spiderman',
     'batman',
-    'league'
+    'league',
+    'stalcius',
+    'stikline',
+    'planet',
+    'mars'
 ];
 var hidenArray = [];
 var randomNumber = Math.floor(Math.random() * words.length);
@@ -52,6 +56,7 @@ var hideWord = function() {
 input.addEventListener('keyup', function() {
     var isItAGoodGuess = false;
     let char = input.value;
+    $('#alert').text(char);
     if (char.match(regex)) {
         let contains = randomWord.includes(char);
         if (contains && !guessedLetters.includes(char)) {
