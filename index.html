@@ -3,6 +3,7 @@
 
 <head>
     <title>Kartuves</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -21,14 +22,14 @@
         <h1 class="text-center welcome py-5"><strong><em>HANGMAN</em></strong></h1>
         <div class="container">
             <div class="row">
-                <em class="text-white text-center">Points: </em><em class="mano text-white text-center" id="points"></em>
+                <em class="text-white text-center pl-2 pt-2">Points: </em><em class="mano text-white text-center" id="points"></em>
             </div>
         </div>
         <div class="container">
 
             <h3 class="text-white text-center">Meet Your Destiny!</h3>
             <div class="row mt-5 d-flex justify-content-center">
-                <h5 class="pr-3 pl-3 text-white">
+                <h5 class="text-white pt-5">
                 Secret Word: 
                 </h5>
                 <p class="text-center" id="randWord">
@@ -63,6 +64,7 @@
                 <div class="box-modal_close arcticmodal-close">
                     <div class="box">
                         <button id="btnwin" type="button" class="btn aqua-gradient">New Game</button>
+                        <h3 id="secretWord"></h3>
                     </div>
                 </div>
             </div>
@@ -80,6 +82,19 @@
             </div>
         </div>
         <!--  Game Over screen ends  -->
+        <div id="creatBlock">
+            <div class="row">
+                <div class="col-md-9 ml-3">
+                    <em>Coded by: <strong>Andrej Romasko</strong></em>
+                    <br/>
+                    <em>Visual Design: <strong>Andrej Romasko</strong></em>
+                    <br/>
+                    <em>Background Music: <strong>Gabrielius Bugys</strong></em>
+                    <br/>
+                    <em>Sound Effects: <strong>Gabrielius Bugys</strong></em>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

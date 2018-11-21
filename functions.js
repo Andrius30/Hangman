@@ -11,28 +11,22 @@ var words = [
     'roof',
     'spiderman',
     'batman',
-    'league',
-    'stalcius',
-    'stikline',
-    'planet',
-    'mars'
+    'league'
 ];
 var hidenArray = [];
 var randomNumber = Math.floor(Math.random() * words.length);
 var randomWord = words[randomNumber];
 var guessedLetters = [];
 var s;
-var g;
-var l;
 var lifes = 8;
 var gussedLetter = 0;
 var points = 0;
 const input = document.querySelector('#gues');
 const regex = /^[a-z\s]*$/;
 const btn = document.getElementById('btn');
-const btnWin = document.getElementById('btnwin');
-const gameOverSound = new sound('https://andrius30.github.io/Hangman//sounds/gameOver.mp3');
-const bgSound = new sound('https://andrius30.github.io/Hangman//sounds/backgroundS.mp3');
+const btnwin = document.getElementById('btnwin');
+const gameOverSound = new sound('sounds/gameOver.mp3');
+const bgSound = new sound('sounds/backgroundS.mp3');
 
 // You Lost Game Over
 console.log(randomWord);
@@ -78,7 +72,6 @@ input.addEventListener('keyup', function() {
     if (gussedLetter >= randomWord.length) {
         // You WON reset
         btnWin.addEventListener('click', function() {
-            gameOverSound.stop(); //  sitas siaip testinimo sumetimais
             lifes = 8;
             gussedLetter = 0;
             guessedLetters = [];
@@ -90,6 +83,7 @@ input.addEventListener('keyup', function() {
         $(function() {
             $('#win').arcticmodal();
         });
+          $('secretWord').text(randomWord);
         points = (points * 2);
     }
 
@@ -113,7 +107,7 @@ input.addEventListener('keyup', function() {
             $('#lifes').text(lifes);
         } else {
             btn.addEventListener('click', function() {
-                gameOverSound.stop();
+            	 gameOverSound.stop();
                 lifes = 8;
                 gussedLetter = 0;
                 guessedLetters = [];
@@ -121,12 +115,12 @@ input.addEventListener('keyup', function() {
                 randomNumber = Math.floor(Math.random() * words.length);
                 randomWord = words[randomNumber];
                 hideWord();
+
             });
             $(function() {
                 $('#exampleModal').arcticmodal();
             });
             // game over sound effects
-            
             gameOverSound.play();
             points = points / 2;
         }
@@ -146,6 +140,10 @@ var stp = function(){
 }
 var ply = function(){
 	bgSound.play();
+}
+
+if((typeof s !== 'undefined' || typeof s !== null) || typeof s !== 'undefined'){
+    console.log('variable l ' + s + " is: " + s);
 }
 
 function sound(src) {
