@@ -31,7 +31,12 @@ const bgSound = new sound('sounds/backgroundS.mp3');
 // You Lost Game Over
 console.log(randomWord);
 
-
+// Prevent on preesed Enter refresh page
+input.addEventListener('keypress', function(event) {
+    if (event.keyCode === 10 || event.keyCode === 13) {
+        event.preventDefault();
+    }
+});
 // hide Word
 var hideWord = function() {
 
@@ -71,7 +76,7 @@ input.addEventListener('keyup', function() {
 
     if (gussedLetter >= randomWord.length) {
         // You WON reset
-        btnWin.addEventListener('click', function() {
+        btnWin.addEventListener('click', function(event) {
             lifes = 8;
             gussedLetter = 0;
             guessedLetters = [];
@@ -83,7 +88,7 @@ input.addEventListener('keyup', function() {
         $(function() {
             $('#win').arcticmodal();
         });
-          $('secretWord').text(randomWord);
+        $('secretWord').text(randomWord);
         points = (points * 2);
     }
 
@@ -107,7 +112,7 @@ input.addEventListener('keyup', function() {
             $('#lifes').text(lifes);
         } else {
             btn.addEventListener('click', function() {
-            	 gameOverSound.stop();
+                gameOverSound.stop();
                 lifes = 8;
                 gussedLetter = 0;
                 guessedLetters = [];
@@ -132,18 +137,14 @@ input.addEventListener('keyup', function() {
 });
 $('#randWord').text(hideWord());
 var bg = function() {
-	bgSound.play();
+    bgSound.play();
 }
 
-var stp = function(){
-	bgSound.stop();
+var stp = function() {
+    bgSound.stop();
 }
-var ply = function(){
-	bgSound.play();
-}
-
-if((typeof s !== 'undefined' || typeof s !== null) || typeof s !== 'undefined'){
-    console.log('variable l ' + s + " is: " + s);
+var ply = function() {
+    bgSound.play();
 }
 
 function sound(src) {
@@ -152,13 +153,13 @@ function sound(src) {
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "none");
     this.sound.setAttribute("loop", "true");
-    this.sound.setAttribute("mute","false");
+    this.sound.setAttribute("mute", "false");
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
-    this.play = function(){
+    this.play = function() {
         this.sound.play();
     }
-    this.stop = function(){
+    this.stop = function() {
         this.sound.pause();
-    }    
+    }
 }
