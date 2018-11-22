@@ -80,10 +80,15 @@ input.addEventListener('keyup', function() {
         btnwin.addEventListener('click', function(event) {
             lifes = 7;
             gussedLetter = 0;
-            guessedLetters = [];
-            hidenArray = [];
+            while(guessedLetters.length > 0){
+            guessedLetters.pop();
+            }
+            while(hidenArray.length > 0){
+            hidenArray.pop();
+            }
             randomNumber = Math.floor(Math.random() * words.length);
             randomWord = words[randomNumber];
+            points = 0;
             hideWord();
         });
         $(function() {
@@ -101,14 +106,18 @@ input.addEventListener('keyup', function() {
     } else {
         isItAGoodGuess = true;
         alert("Tokia raide jau buvo! " + char.toUpperCase());
+        if(points > 0){
         points = (points - 10);
+        }
     }
 
     // if its not a good guess lifes geting one less
     if (!isItAGoodGuess) {
         if (lifes != 0 && lifes > 0) {
              lifes--;
+            if(points > 0){
             points = (points - 50);
+            }
             $('#lifes').text(lifes);
 
             // hangman image sprites
@@ -144,8 +153,13 @@ input.addEventListener('keyup', function() {
                 gameOverSound.stop();
                 lifes = 7;
                 gussedLetter = 0;
-                guessedLetters = [];
-                hidenArray = [];
+                while(guessedLetters.length > 0){
+                guessedLetters.pop();
+                }
+                while(hidenArray.length > 0){
+                hidenArray.pop();
+                }
+                points = 0;
                 randomNumber = Math.floor(Math.random() * words.length);
                 randomWord = words[randomNumber];
                 hideWord();
