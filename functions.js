@@ -76,7 +76,7 @@ input.addEventListener('keyup', function() {
 
     if (gussedLetter >= randomWord.length) {
         // You WON reset
-        btnWin.addEventListener('click', function(event) {
+        btnwin.addEventListener('click', function(event) {
             lifes = 8;
             gussedLetter = 0;
             guessedLetters = [];
