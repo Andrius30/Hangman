@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
     <div id="container-fluid">
         <button onclick="stp()" class="btn btn-danger">Mute Sound</button>
         <button onclick="ply()" class="btn btn-primary">Play</button>
@@ -26,7 +27,6 @@
             </div>
         </div>
         <div class="container">
-
             <h3 class="text-white text-center">Meet Your Destiny!</h3>
             <div class="row mt-5 d-flex justify-content-center">
                 <h5 class="text-white pt-5">
@@ -43,7 +43,6 @@
                 <form>
                     <input id="gues" class="form-control" type="text" maxlength="1">
                 </form>
-                <!--                 <button type="button" class="btn btn-primary" onclick="newFunction()" >Tikrinti</button> -->
             </div>
         </div>
         <div class="container">
@@ -73,7 +72,8 @@
         <!-- Game Over Screen ---->
         <div style="display: none;">
             <div class="box-modal" id="exampleModal">
-                <h1>Game Over</h1>
+                <h1>Game Over</h1><br/>
+                <h4>Word was: </h4><p id="secretword"></p>
                 <div class="box-modal_close arcticmodal-close">
                     <div class="box">
                         <button id="btn" type="button" class="btn aqua-gradient">New Game</button>
@@ -87,14 +87,16 @@
                 <div class="col-md-9 ml-3">
                     <em>Coded by: <strong>Andrej Romasko</strong></em>
                     <br/>
-                    <em>Visual Design: <strong>Andrej Romasko</strong></em>
-                    <br/>
+                    <!-- <em>Visual Design: <strong>Andrej Romasko</strong></em>
+                    <br/> -->
                     <em>Background Music: <strong>Gabrielius Bugys</strong></em>
                     <br/>
                     <em>Sound Effects: <strong>Gabrielius Bugys</strong></em>
                 </div>
             </div>
         </div>
+        <div id="div2"></div>
+        <div id="div"></div>
     </div>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -106,6 +108,8 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js"></script>
     <script src="functions.js"></script>
+     <script src="p5.min.js"></script>
+      <script src="addons/p5.dom.min.js"></script>
 </body>
 
 </html>
