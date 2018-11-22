@@ -4,6 +4,7 @@ body{
     background: url(img/bg2.jpg) no-repeat center;
     background: cover;
     position: relative;
+    background-attachment: fixed;
 }
 
 #creatBlock{
