@@ -1,8 +1,4 @@
 var words = [
-    'testas',
-    'medis',
-    'stalas',
-    'kate',
     'thewarondrugs',
     'everyonewhoknew',
     'television',
@@ -11,7 +7,15 @@ var words = [
     'roof',
     'spiderman',
     'batman',
-    'league'
+    'league',
+    'moon',
+    'haters',
+    'newday',
+    'begining',
+    'horse',
+    'universe',
+    'holiwood',
+    'happy'
 ];
 var hidenArray = [];
 var randomNumber = Math.floor(Math.random() * words.length);
