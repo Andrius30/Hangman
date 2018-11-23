@@ -2,7 +2,11 @@ var words = [
     'thewarondrugs','everyonewhoknew','television',
     'bridge','table','roof','spiderman','batman',
     'league','moon','haters','newday','begining',
-    'horse','universe','holiwood','happy'
+    'horse','universe','holiwood','happy','glass',
+    'table','absurd','askew','avenue','axiom',
+    'awkward','bandwagon','bikini','blitz',
+    'katarina','olaf','riven','imthelegend',
+    'beekeeper','bayou'
 ];
 var hidenArray = [];
 var randomNumber = Math.floor(Math.random() * words.length);
