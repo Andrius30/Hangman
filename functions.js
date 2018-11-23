@@ -1,21 +1,8 @@
 var words = [
-    'thewarondrugs',
-    'everyonewhoknew',
-    'television',
-    'bridge',
-    'table',
-    'roof',
-    'spiderman',
-    'batman',
-    'league',
-    'moon',
-    'haters',
-    'newday',
-    'begining',
-    'horse',
-    'universe',
-    'holiwood',
-    'happy'
+    'thewarondrugs','everyonewhoknew','television',
+    'bridge','table','roof','spiderman','batman',
+    'league','moon','haters','newday','begining',
+    'horse','universe','holiwood','happy'
 ];
 var hidenArray = [];
 var randomNumber = Math.floor(Math.random() * words.length);
