@@ -28,10 +28,6 @@ const btnwin = document.getElementById('btnwin');
 const gameOverSound = new sound('sounds/gameOver.mp3');
 const bgSound = new sound('sounds/backgroundS.mp3');
 
-
-// You Lost Game Over
-console.log(randomWord);
-
 // Prevent on preesed Enter refresh page
 input.addEventListener('keypress', function(event) {
     if (event.keyCode === 10 || event.keyCode === 13) {
@@ -80,11 +76,11 @@ input.addEventListener('keyup', function() {
         btnwin.addEventListener('click', function(event) {
             lifes = 7;
             gussedLetter = 0;
-            while(guessedLetters.length > 0){
-            guessedLetters.pop();
+            while (guessedLetters.length > 0) {
+                guessedLetters.pop();
             }
-            while(hidenArray.length > 0){
-            hidenArray.pop();
+            while (hidenArray.length > 0) {
+                hidenArray.pop();
             }
             randomNumber = Math.floor(Math.random() * words.length);
             randomWord = words[randomNumber];
@@ -94,29 +90,26 @@ input.addEventListener('keyup', function() {
         $(function() {
             $('#win').arcticmodal();
         });
-        points = (points * 2);
+        points = points * 2;
     }
 
     // if letter guessed already
     if (!guessedLetters.includes(char)) {
         //previous guesses
-        g = guessedLetters.join(",");
+        g = guessedLetters.join(", ");
         $("#guesses").text(g);
         guessedLetters.push(char);
     } else {
         isItAGoodGuess = true;
         alert("Tokia raide jau buvo! " + char.toUpperCase());
-        if(points > 0){
-        points = (points - 10);
-        }
     }
 
     // if its not a good guess lifes geting one less
     if (!isItAGoodGuess) {
-        if (lifes != 0 && lifes > 0) {
-             lifes--;
-            if(points > 0){
-            points = (points - 50);
+        if (lifes != 0 || lifes > 0) {
+            lifes--;
+            if (points > 0) {
+                points = points - 20;
             }
             $('#lifes').text(lifes);
 
@@ -126,10 +119,10 @@ input.addEventListener('keyup', function() {
             document.body.appendChild(image);
             switch (lifes) {
                 case 6:
-                  image.className = 'case6';
+                    image.className = 'case6';
                     break;
                 case 5:
-                   image.className = 'case5';
+                    image.className = 'case5';
                     break;
                 case 4:
                     image.className = 'case4';
@@ -144,7 +137,7 @@ input.addEventListener('keyup', function() {
                     image.className = 'case1';
                     break;
                 case 0:
-                   image.className = 'case0';
+                    image.className = 'case0';
                     break;
             }
 
@@ -153,11 +146,11 @@ input.addEventListener('keyup', function() {
                 gameOverSound.stop();
                 lifes = 7;
                 gussedLetter = 0;
-                while(guessedLetters.length > 0){
-                guessedLetters.pop();
+                while (guessedLetters.length > 0) {
+                    guessedLetters.pop();
                 }
-                while(hidenArray.length > 0){
-                hidenArray.pop();
+                while (hidenArray.length > 0) {
+                    hidenArray.pop();
                 }
                 points = 0;
                 randomNumber = Math.floor(Math.random() * words.length);
