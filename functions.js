@@ -97,7 +97,7 @@ input.addEventListener('keyup', function() {
         guessedLetters.push(char);
     } else {
         isItAGoodGuess = true;
-        alert("Tokia raide jau buvo! " + char.toUpperCase());
+        alert("You already guessed this letter " + char.toUpperCase());
     }
 
     // if its not a good guess lifes geting one less
