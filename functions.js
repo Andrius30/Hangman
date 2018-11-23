@@ -1,12 +1,12 @@
 var words = [
-    'thewarondrugs','everyonewhoknew','television',
-    'bridge','table','roof','spiderman','batman',
-    'league','moon','haters','newday','begining',
-    'horse','universe','holiwood','happy','glass',
-    'table','absurd','askew','avenue','axiom',
-    'awkward','bandwagon','bikini','blitz',
-    'katarina','olaf','riven','imthelegend',
-    'beekeeper','bayou'
+    'thewarondrugs', 'everyonewhoknew', 'television',
+    'bridge', 'table', 'roof', 'spiderman', 'batman',
+    'league', 'moon', 'haters', 'newday', 'begining',
+    'horse', 'universe', 'holiwood', 'happy', 'glass',
+    'table', 'absurd', 'askew', 'avenue', 'axiom',
+    'awkward', 'bandwagon', 'bikini', 'blitz',
+    'katarina', 'olaf', 'riven', 'imthelegend',
+    'beekeeper', 'bayou'
 ];
 var hidenArray = [];
 var randomNumber = Math.floor(Math.random() * words.length);
@@ -22,6 +22,7 @@ const btn = document.getElementById('btn');
 const btnwin = document.getElementById('btnwin');
 const gameOverSound = new sound('sounds/gameOver.mp3');
 const bgSound = new sound('sounds/backgroundS.mp3');
+let guessFullWord = document.getElementById('guessword');
 
 // Prevent on preesed Enter refresh page
 input.addEventListener('keypress', function(event) {
@@ -194,5 +195,72 @@ function sound(src) {
     }
     this.stop = function() {
         this.sound.pause();
+    }
+}
+
+// Try guess whole word function
+var FullWord = function() {
+    var wholeWord = guessFullWord.value.toLocaleLowerCase();
+    if (wholeWord !== '') {
+        for (var i = 0; i < randomWord.length; i++) {
+            if (wholeWord.match(regex)) {
+                if (randomWord.includes(wholeWord)) {
+                    // You WON reset
+                    btnwin.addEventListener('click', function(event) {
+                        lifes = 7;
+                        gussedLetter = 0;
+                        while (guessedLetters.length > 0) {
+                            guessedLetters.pop();
+                        }
+                        while (hidenArray.length > 0) {
+                            hidenArray.pop();
+                        }
+                        randomNumber = Math.floor(Math.random() * words.length);
+                        randomWord = words[randomNumber];
+                        points = 0;
+                        hideWord();
+                    });
+                    $(function() {
+                        $('#win').arcticmodal();
+                    });
+                    points = points * 2;
+                    wholeWord.value = '';
+                } else {
+                    btn.addEventListener('click', function() {
+                        gameOverSound.stop();
+                        lifes = 7;
+                        gussedLetter = 0;
+                        while (guessedLetters.length > 0) {
+                            guessedLetters.pop();
+                        }
+                        while (hidenArray.length > 0) {
+                            hidenArray.pop();
+                        }
+                        points = 0;
+                        randomNumber = Math.floor(Math.random() * words.length);
+                        randomWord = words[randomNumber];
+                        wholeWord.value = '';
+                        hideWord();
+                    });
+                    $(function() {
+                        $('#exampleModal').arcticmodal();
+                    });
+                    $('#secretword').text(randomWord);
+                    // game over sound effects
+                    gameOverSound.play();
+                    if (points > 0) {
+                        points = points / 2;
+                        if (points < 0) {
+                            points = 0;
+                        }
+                    }
+                }
+            } else {
+                alert('Bad Imput!');
+                wholeWord.value = '';
+            }
+        }
+    } else {
+        alert("Input Field Empty!");
     }
 }

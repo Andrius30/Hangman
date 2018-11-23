@@ -41,7 +41,19 @@
                     <p class="text-center" id="alert"></p>
                 </div>
                 <form>
-                    <input id="gues" class="form-control" type="text" maxlength="1">
+                    <input id="gues" class="form-control  ml-3" type="text" maxlength="1">
+                </form>
+                    <div class="row" id="instruction">
+                    <div class="col-md-6">
+                        <p text-white>You can try guess
+                        the word.<br/>
+                            <strong>But if you fail, you instantly loose the game.</strong>
+                        </p>
+                        </div>
+                    </div>
+                <form class="forma2">
+                  <input onclick="this.value=''"  id="guessword" class="form-control  ml-3 mt-2" type="text" maxlength="30">
+                    <button type="button" class="btn btn-outline-white  ml-3" onclick="FullWord()"><span class="text-white">Guess word</span></button>
                 </form>
             </div>
         </div>

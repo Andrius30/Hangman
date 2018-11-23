@@ -175,3 +175,29 @@ h5 {
     width: 75px;
     height: 200px;
 }
+
+.form-control {
+    width: 80px;
+}
+
+.forma2 {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+}
+
+#guessword {
+    width: 170px;
+}
+
+.col-md-6 p {
+    color: white;
+    font-size: inherit;
+    text-align: center;
+}
+
+
+#instruction {
+    display: flex;
+    justify-content: center;
+}
