@@ -41,7 +41,7 @@ body {
 
 .container {
     position: relative;
-    background: rgba(0, 0, 255, 0.2);
+    background: rgba(5, 5, 5, 0.42);
     z-index: 20;
 }
 
