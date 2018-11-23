@@ -10,14 +10,14 @@ var words = [
 ];
 var hidenArray = [];
 var randomNumber = Math.floor(Math.random() * words.length);
-var randomWord = words[randomNumber];
+var randomWord = words[randomNumber].toLocaleLowerCase();
 var guessedLetters = [];
 var s;
 var lifes = 7;
 var gussedLetter = 0;
 var points = 0;
 const input = document.querySelector('#gues');
-const regex = /^[a-z\s]*$/;
+const regex = /^[a-zA-Z\s]*$/;
 const btn = document.getElementById('btn');
 const btnwin = document.getElementById('btnwin');
 const gameOverSound = new sound('sounds/gameOver.mp3');
@@ -41,12 +41,12 @@ var hideWord = function() {
     }
     // update hiden word
     s = hidenArray.join(" ");
-    $("#randWord").text(s);
+    $("#randWord").text(s.toLocaleLowerCase());
 }
 
 input.addEventListener('keyup', function() {
     var isItAGoodGuess = false;
-    let char = input.value;
+    let char = input.value.toLocaleLowerCase();
     $('#alert').text(char);
     if (char.match(regex)) {
         let contains = randomWord.includes(char);
